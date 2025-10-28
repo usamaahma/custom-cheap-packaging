@@ -39,7 +39,10 @@ export default function Header2() {
       {/* 🟩 Top Section */}
       <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center px-4 sm:px-10 py-2 bg-gray-50 text-gray-700 text-sm">
         <div className="flex items-center gap-4 w-full sm:w-auto">
-          <Image src="/mainlogo.png" alt="Logo" width={200} height={100} />
+          <Link key={index} href="/">
+            {" "}
+            <Image src="/mainlogo.png" alt="Logo" width={200} height={100} />
+          </Link>
 
           {/* Search Bar */}
           <div className="hidden sm:flex flex-1 max-w-md items-center bg-white border border-gray-300 rounded-full px-4 py-2 shadow-sm focus-within:ring-2 focus-within:ring-green-500">
