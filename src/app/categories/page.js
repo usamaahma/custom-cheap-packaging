@@ -38,6 +38,7 @@ export default function Categories() {
           img: "/flip1.jpg",
           features: ["Pop-up Design", "Easy Assembly", "Branded Elements"],
         },
+        // Additional items to show we have more than 3
         {
           title: "Custom T-Shirt Boxes",
           desc: "Perfectly sized boxes for t-shirts with custom branding and window display options.",
@@ -73,6 +74,18 @@ export default function Categories() {
             "Organizer Inserts",
           ],
         },
+        {
+          title: "Custom Skincare Boxes",
+          desc: "Elegant packaging for skincare products with premium finishes.",
+          img: "/flip1.jpg",
+          features: ["Premium Finish", "UV Protection", "Luxury Feel"],
+        },
+        {
+          title: "Custom Perfume Boxes",
+          desc: "Sophisticated packaging for fragrance products with secure closures.",
+          img: "/flip1.jpg",
+          features: ["Secure Closure", "Elegant Design", "Sample Slots"],
+        },
       ],
     },
     {
@@ -91,6 +104,18 @@ export default function Categories() {
           desc: "Aroma-proof packaging for coffee beans and ground coffee products.",
           img: "/flip1.jpg",
           features: ["Aroma-proof", "Resealable", "Valve Options"],
+        },
+        {
+          title: "Custom Tea Packaging",
+          desc: "Elegant packaging for tea products with freshness preservation.",
+          img: "/flip1.jpg",
+          features: ["Freshness Seal", "Elegant Design", "Moisture Proof"],
+        },
+        {
+          title: "Custom Snack Boxes",
+          desc: "Durable packaging for snack foods with attractive display options.",
+          img: "/flip1.jpg",
+          features: ["Durable Material", "Window Display", "Easy Open"],
         },
       ],
     },
@@ -159,7 +184,6 @@ export default function Categories() {
           </div>
 
           {/* Subcategories Grid */}
-          {/* Subcategories Grid */}
           {categories.map((category, categoryIndex) => (
             <div key={categoryIndex} className="mb-20">
               <div className="text-left mb-12">
@@ -172,86 +196,130 @@ export default function Categories() {
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {category.subcategories.map((subcategory, index) => (
-                  <div
-                    key={index}
-                    className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 group"
-                  >
-                    {/* Image Container - Full Width & Height */}
-                    <div className="relative h-56 w-full bg-gray-100">
-                      <Image
-                        src={subcategory.img}
-                        alt={subcategory.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-300"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                        onError={(e) => {
-                          e.currentTarget.src = "/images/placeholder-box.jpg"; // fallback image
-                          e.currentTarget.srcset = "";
-                        }}
-                      />
-                      {/* Optional Overlay on Hover */}
-                      <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+                {/* Show first 3 items + View All card */}
+                {category.subcategories
+                  .slice(0, 3)
+                  .map((subcategory, index) => (
+                    <div
+                      key={index}
+                      className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 group"
+                    >
+                      {/* Image Container - Full Width & Height */}
+                      <div className="relative h-56 w-full bg-gray-100">
+                        <Image
+                          src={subcategory.img}
+                          alt={subcategory.title}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-300"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                          onError={(e) => {
+                            e.currentTarget.src = "/images/placeholder-box.jpg"; // fallback image
+                            e.currentTarget.srcset = "";
+                          }}
+                        />
+                        {/* Optional Overlay on Hover */}
+                        <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
 
-                      {/* Featured Badge */}
-                      <div className="absolute top-3 left-3">
-                        <span className="bg-green-600 text-white px-2.5 py-1 rounded-full text-xs font-semibold">
-                          Featured
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Card Content */}
-                    <div className="p-5">
-                      <h3 className="text-lg font-bold text-black mb-2 group-hover:text-green-700 transition-colors line-clamp-2">
-                        {subcategory.title}
-                      </h3>
-                      <p className="text-gray-600 text-sm leading-relaxed mb-3 line-clamp-2">
-                        {subcategory.desc}
-                      </p>
-
-                      {/* Features */}
-                      <div className="mb-4">
-                        <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
-                          Key Features
-                        </h4>
-                        <div className="flex flex-wrap gap-1.5">
-                          {subcategory.features.map((feature, i) => (
-                            <span
-                              key={i}
-                              className="bg-green-50 text-green-700 text-xs px-2.5 py-1 rounded-full font-medium border border-green-200"
-                            >
-                              {feature}
-                            </span>
-                          ))}
+                        {/* Featured Badge */}
+                        <div className="absolute top-3 left-3">
+                          <span className="bg-green-600 text-white px-2.5 py-1 rounded-full text-xs font-semibold">
+                            Featured
+                          </span>
                         </div>
                       </div>
 
-                      {/* Action Buttons */}
-                      <div className="flex justify-between items-center pt-3 border-t border-gray-100">
-                        <button className="text-green-700 hover:text-green-600 font-medium text-sm flex items-center gap-1.5 transition-colors group/btn">
-                          Learn More
-                          <svg
-                            className="w-3.5 h-3.5 transform group-hover/btn:translate-x-1 transition-transform"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </button>
-                        <button className="bg-green-600 hover:bg-green-500 text-white px-3 py-1.5 rounded-md text-xs font-semibold transition-all hover:scale-105">
-                          Get Quote
-                        </button>
+                      {/* Card Content */}
+                      <div className="p-5">
+                        <h3 className="text-lg font-bold text-black mb-2 group-hover:text-green-700 transition-colors line-clamp-2">
+                          {subcategory.title}
+                        </h3>
+                        <p className="text-gray-600 text-sm leading-relaxed mb-3 line-clamp-2">
+                          {subcategory.desc}
+                        </p>
+
+                        {/* Features */}
+                        <div className="mb-4">
+                          <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
+                            Key Features
+                          </h4>
+                          <div className="flex flex-wrap gap-1.5">
+                            {subcategory.features.map((feature, i) => (
+                              <span
+                                key={i}
+                                className="bg-green-50 text-green-700 text-xs px-2.5 py-1 rounded-full font-medium border border-green-200"
+                              >
+                                {feature}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Action Buttons */}
+                        <div className="flex justify-between items-center pt-3 border-t border-gray-100">
+                          <button className="text-green-700 hover:text-green-600 font-medium text-sm flex items-center gap-1.5 transition-colors group/btn">
+                            Learn More
+                            <svg
+                              className="w-3.5 h-3.5 transform group-hover/btn:translate-x-1 transition-transform"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M9 5l7 7-7 7"
+                              />
+                            </svg>
+                          </button>
+                          <button className="bg-green-600 hover:bg-green-500 text-white px-3 py-1.5 rounded-md text-xs font-semibold transition-all hover:scale-105">
+                            Get Quote
+                          </button>
+                        </div>
                       </div>
                     </div>
+                  ))}
+
+                {/* View All Card - Always the 4th card */}
+                <div className="bg-gradient-to-br from-green-900 to-green-800 text-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-green-700 group cursor-pointer">
+                  <div className="relative h-56 w-full bg-green-700 flex items-center justify-center">
+                    <div className="text-center p-6">
+                      <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <svg
+                          className="w-8 h-8 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </div>
+                      <h3 className="text-xl font-bold mb-2">View All</h3>
+                      <p className="text-green-100 text-sm opacity-90">
+                        Explore all {category.subcategories.length}+{" "}
+                        {category.title.toLowerCase()}
+                      </p>
+                    </div>
                   </div>
-                ))}
+
+                  <div className="p-5 bg-green-800 bg-opacity-50">
+                    <div className="text-center">
+                      <div className="flex justify-center items-center gap-2 mb-3">
+                        <span className="text-green-200 text-sm">
+                          {category.subcategories.length}+ Products Available
+                        </span>
+                      </div>
+                      <button className="w-full bg-white text-green-900 hover:bg-green-100 font-semibold py-2.5 rounded-lg transition-all duration-300 transform group-hover:scale-105">
+                        Browse All
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
