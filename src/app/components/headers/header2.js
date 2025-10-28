@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Header2() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -119,13 +120,13 @@ export default function Header2() {
           {/* Navbar Links */}
           <nav className="flex gap-8 text-gray-800 font-medium">
             {categories.map((cat, index) => (
-              <a
+              <Link
                 key={index}
-                href="#"
+                href="/categories"
                 className="hover:text-green-600 transition-colors border-r last:border-none border-gray-300 pr-8"
               >
                 {cat}
-              </a>
+              </Link>
             ))}
           </nav>
 

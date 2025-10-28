@@ -22,7 +22,6 @@ function Home1() {
       <StepsPrinting />
       <Clients />
       <ProductsSection />
-      <Footer />
     </div>
   );
 }
