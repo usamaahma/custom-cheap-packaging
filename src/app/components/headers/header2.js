@@ -41,7 +41,7 @@ export default function Header2() {
         <div className="flex items-center gap-4 w-full sm:w-auto">
           <Link href="/">
             {" "}
-            <Image src="/mainlogo.png" alt="Logo" width={200} height={100} />
+            <Image src="/Cheap Custom Packaging Logo.webp" alt="Cheap Custom Packaging Logo" width={200} height={100} />
           </Link>
 
           {/* Search Bar */}
