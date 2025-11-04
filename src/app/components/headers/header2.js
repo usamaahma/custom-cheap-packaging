@@ -38,19 +38,20 @@ export default function Header2() {
     <header className="w-full border-b border-gray-200 bg-white relative z-50">
       {/* 🟩 Top Section */}
       <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center px-4 sm:px-10 py-2 bg-gray-50 text-gray-700 text-sm">
-        <div className="flex items-center gap-4 w-full sm:w-auto">
+        <div className="flex items-center gap-4 w-full sm:w-auto flex-1">
+          {/* Logo */}
           <Link href="/">
-            {" "}
             <Image
               src="/Cheap Custom Packaging Logo.webp"
               alt="Cheap Custom Packaging Logo"
-              width={200}
+              width={150}
               height={100}
+              className="w-auto h-auto"
             />
           </Link>
 
-          {/* Search Bar */}
-          <div className="hidden sm:flex flex-1 max-w-md items-center bg-white border border-gray-300 rounded-full px-4 py-2 shadow-sm focus-within:ring-2 focus-within:ring-green-500">
+          {/* Search Bar (FULL WIDTH) */}
+          <div className="hidden sm:flex flex-1 items-center bg-white border border-gray-300 rounded-full px-4 h-[50px] shadow-sm focus-within:ring-2 focus-within:ring-[#8A00C3] ml-6">
             <input
               type="text"
               placeholder="Search for products..."
@@ -58,7 +59,7 @@ export default function Header2() {
             />
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 text-gray-500"
+              className="h-6 w-6 text-gray-500"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -74,7 +75,7 @@ export default function Header2() {
         </div>
 
         {/* Call Section */}
-        <div className="text-center sm:text-right mt-3 sm:mt-0">
+        <div className="text-center sm:text-right mt-3 sm:mt-0 sm:ml-6">
           <p>Call us toll free:</p>
           <p className="text-[#8A00C3] text-lg font-semibold">1-888-997-2202</p>
           <p className="text-xs text-gray-500">
@@ -131,7 +132,7 @@ export default function Header2() {
               <Link
                 key={index}
                 href="/categories"
-                className="hover:text-green-600 transition-colors border-r last:border-none border-gray-300 pr-8"
+                className="hover:text-[#8A00C3] transition-colors border-r last:border-none border-gray-300 pr-8"
               >
                 {cat}
               </Link>
@@ -146,10 +147,10 @@ export default function Header2() {
             Request a Free Quote
           </a>
 
-          {/* 🟢 One Shared Full-Width Dropdown */}
+          {/* 🟢 Dropdown */}
           <div className="absolute left-0 right-0 top-full mt-2 hidden group-hover:flex bg-white shadow-lg border border-gray-200 p-6 rounded-lg z-40">
             <div className="flex w-full justify-between gap-6">
-              {/* Left Side (Image Cards) */}
+              {/* Left Side */}
               <div className="flex flex-wrap gap-5 w-[70%]">
                 {leftItems.map((item, idx) => (
                   <div
@@ -172,19 +173,19 @@ export default function Header2() {
                 ))}
               </div>
 
-              {/* Right Side (Text Links) */}
+              {/* Right Side */}
               <div className="flex flex-col justify-start w-[30%] border-l border-gray-200 pl-6">
                 {rightLinks.map((link, i) => (
                   <a
                     key={i}
                     href="#"
-                    className="text-gray-700 hover:text-green-600 py-1 text-sm transition-colors"
+                    className="text-gray-700 hover:text-[#8A00C3] py-1 text-sm transition-colors"
                   >
                     {link}
                   </a>
                 ))}
                 <div className="mt-4">
-                  <button className="bg-green-600 text-white px-4 py-2 rounded-full text-sm hover:bg-green-700 transition">
+                  <button className="bg-[#8A00C3] text-white px-4 py-2 rounded-full text-sm hover:bg-[#470065] transition">
                     View All Industries
                   </button>
                 </div>
@@ -194,7 +195,7 @@ export default function Header2() {
         </div>
       </div>
 
-      {/* 🟩 Mobile Dropdown Menu */}
+      {/* 🟩 Mobile Dropdown */}
       {menuOpen && (
         <div className="sm:hidden bg-gray-50 border-t border-gray-200 py-3">
           <div className="px-4 pb-3">
@@ -226,14 +227,14 @@ export default function Header2() {
               <a
                 key={index}
                 href="#"
-                className="text-gray-800 hover:text-green-600 transition-colors"
+                className="text-gray-800 hover:text-[#8A00C3] transition-colors"
               >
                 {cat}
               </a>
             ))}
             <a
               href="#"
-              className="mt-2 bg-green-600 text-white px-5 py-2 rounded-full hover:bg-green-700 transition"
+              className="mt-2 bg-[#8A00C3] text-white px-5 py-2 rounded-full hover:bg-[#470065] transition"
             >
               Request a Free Quote
             </a>
