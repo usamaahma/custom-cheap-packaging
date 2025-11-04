@@ -59,18 +59,9 @@ const ProductHomePage = () => {
     slidesToScroll: 1,
     pauseOnHover: true,
     responsive: [
-      {
-        breakpoint: 1024,
-        settings: { slidesToShow: 3 },
-      },
-      {
-        breakpoint: 768,
-        settings: { slidesToShow: 2 },
-      },
-      {
-        breakpoint: 480,
-        settings: { slidesToShow: 1 },
-      },
+      { breakpoint: 1024, settings: { slidesToShow: 3 } },
+      { breakpoint: 768, settings: { slidesToShow: 2 } },
+      { breakpoint: 480, settings: { slidesToShow: 1 } },
     ],
   };
 
@@ -80,10 +71,10 @@ const ProductHomePage = () => {
         <div key={i} className="mb-20 relative">
           {/* Section Heading */}
           <div className="text-center mb-8">
-            <h2 className="text-[20px] font-bold text-[#0a6847] uppercase relative inline-block tracking-wide">
+            <h2 className="text-[20px] font-bold text-[#8A00C3] uppercase relative inline-block tracking-wide">
               {section.category}
-              <span className="block w-10 h-[2px] bg-[#0a6847] mx-auto mt-2"></span>
-              <span className="absolute left-1/2 transform -translate-x-1/2 top-full mt-1 text-[#0a6847] text-xs">
+              <span className="block w-10 h-[2px] bg-[#8A00C3] mx-auto mt-2"></span>
+              <span className="absolute left-1/2 transform -translate-x-1/2 top-full mt-1 text-[#8A00C3] text-xs">
                 ✿
               </span>
             </h2>
@@ -94,7 +85,7 @@ const ProductHomePage = () => {
             <Slider {...settings}>
               {section.products.map((product, idx) => (
                 <div key={idx} className="px-2">
-                  <div className="bg-white border border-gray-200 rounded-md overflow-hidden text-center hover:shadow-md transition-all duration-300">
+                  <div className="bg-white border border-[#470065]/20 rounded-md overflow-hidden text-center hover:shadow-lg hover:border-[#8A00C3]/50 transition-all duration-300">
                     <div className="bg-white flex items-center justify-center h-[220px]">
                       <img
                         src={defaultImage}
@@ -103,7 +94,7 @@ const ProductHomePage = () => {
                       />
                     </div>
                     <div className="p-3">
-                      <span className="inline-block text-xs font-medium text-[#0a6847] border border-[#0a6847] px-3 py-1 rounded-sm uppercase tracking-tight">
+                      <span className="inline-block text-xs font-semibold text-[#470065] border border-[#470065] px-3 py-1 rounded-sm uppercase tracking-tight hover:bg-[#8A00C3] hover:text-white hover:border-[#8A00C3] transition-all duration-200">
                         {product.name}
                       </span>
                     </div>
@@ -115,7 +106,7 @@ const ProductHomePage = () => {
 
           {/* View All Button */}
           <div className="text-center mt-6">
-            <button className="border border-[#0a6847] text-[#0a6847] text-[13px] font-medium uppercase px-6 py-1.5 rounded-sm hover:bg-[#0a6847] hover:text-white transition-all duration-200">
+            <button className="border border-[#8A00C3] text-[#8A00C3] text-[13px] font-medium uppercase px-6 py-1.5 rounded-sm hover:bg-[#8A00C3] hover:text-white transition-all duration-200">
               View All
             </button>
           </div>
@@ -124,5 +115,5 @@ const ProductHomePage = () => {
     </div>
   );
 };
- 
+
 export default ProductHomePage;

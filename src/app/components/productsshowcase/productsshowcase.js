@@ -60,20 +60,20 @@ function ProductsSection() {
       <div className="max-w-[1280px] mx-auto px-6">
         {/* Heading */}
         <div className="text-center mb-12">
-          <h4 className="text-green-700 text-3xl font-semibold mb-2">
+          <h4 className="text-[#8A00C3] text-2xl font-semibold mb-2 tracking-wide">
             Products
           </h4>
-          <h2 className="text-3xl md:text-4xl font-bold text-black mb-3">
-            Bestselling custom bags
+          <h2 className="text-3xl md:text-4xl font-bold text-[#470065] mb-3">
+            Bestselling Custom Boxes
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto">
             See your ideas come to life with our{" "}
-            <span className="font-semibold text-green-700">
+            <span className="font-semibold text-[#8A00C3]">
               custom packaging
             </span>{" "}
             solutions.
           </p>
-          <button className="mt-4 text-green-700 text-sm font-medium hover:underline">
+          <button className="mt-5 text-sm font-semibold text-[#8A00C3] border border-[#8A00C3] px-5 py-2 rounded-full hover:bg-[#8A00C3] hover:text-white transition">
             SEE ALL SHOP →
           </button>
         </div>
@@ -83,16 +83,16 @@ function ProductsSection() {
           {products.map((product, i) => (
             <div
               key={i}
-              className="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all p-4 flex flex-col items-center text-center"
+              className="bg-white border border-[#8A00C3]/20 rounded-xl shadow-sm hover:shadow-lg hover:scale-[1.02] transition-all p-5 flex flex-col items-center text-center"
             >
-              <div className="w-full h-40 flex items-center justify-center mb-3">
+              <div className="w-full h-40 flex items-center justify-center mb-3 overflow-hidden rounded-md">
                 <img
                   src={product.img}
                   alt={product.title}
-                  className="max-h-36 object-contain"
+                  className="max-h-36 object-contain hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <h3 className="text-black font-semibold text-sm mb-1">
+              <h3 className="text-[#470065] font-semibold text-sm mb-2">
                 {product.title}
               </h3>
               <p className="text-gray-500 text-xs leading-snug line-clamp-3">

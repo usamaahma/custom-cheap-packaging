@@ -8,7 +8,7 @@ const steps = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-6 w-6 text-[#0a6847]" // green icon
+        className="h-6 w-6 text-[#8A00C3]"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -29,7 +29,7 @@ const steps = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-6 w-6 text-[#0a6847]"
+        className="h-6 w-6 text-[#8A00C3]"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -51,7 +51,7 @@ const steps = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-6 w-6 text-[#0a6847]"
+        className="h-6 w-6 text-[#8A00C3]"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -73,11 +73,11 @@ const steps = [
   {
     title: "Production & Then Final Delivery",
     description:
-      "Once we get your approval we proceed with production. On approval, we package and deliver the final product to your door step.",
+      "Once we get your approval we proceed with production. On approval, we package and deliver the final product to your doorstep.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-6 w-6 text-[#0a6847]"
+        className="h-6 w-6 text-[#8A00C3]"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -97,49 +97,45 @@ const steps = [
 
 export default function EasySteps() {
   return (
-    <div className="max-w-7xl mx-auto px-6 py-12 bg-white">
-      {" "}
-      {/* white background */}
-      <h2 className="text-center text-xl font-bold mb-10 uppercase text-black">
-        {" "}
-        {/* black text */}
+    <div className="max-w-7xl mx-auto px-6 py-16 bg-white">
+      <h2 className="text-center text-2xl font-bold mb-12 uppercase text-[#470065] tracking-wide">
         HOW WE WORK IN 4 EASY STEPS
       </h2>
+
       <div className="relative">
-        {/* Vertical line */}
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 h-full border-l border-[#0a6847]" />{" "}
-        {/* green line */}
-        <div className="space-y-10">
+        {/* Center vertical line */}
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 h-full border-l-2 border-[#8A00C3]/40" />
+
+        <div className="space-y-14">
           {steps.map((step, idx) => {
             const isEven = idx % 2 === 0;
             return (
               <div key={idx} className="relative flex items-center">
-                {/* Step number circle */}
-                <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#0a6847] text-white rounded-full w-14 h-14 flex items-center justify-center font-bold z-10">
+                {/* Step Number Circle */}
+                <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#8A00C3] text-white rounded-full w-16 h-16 flex items-center justify-center font-bold shadow-lg z-10">
                   Step {idx + 1}
                 </div>
 
-                {/* Content box */}
+                {/* Content Box */}
                 <div
-                  className={`bg-white rounded-lg p-6 w-96 shadow-md ${
+                  className={`bg-white border border-[#470065]/20 rounded-lg p-6 w-96 shadow-md hover:shadow-xl transition-all duration-300 ${
                     isEven ? "mr-auto" : "ml-auto"
                   }`}
-                  style={{ zIndex: 0 }}
                 >
-                  <div className="flex items-center space-x-3 mb-3 text-[#0a6847]">
+                  <div className="flex items-center space-x-3 mb-3 text-[#8A00C3]">
                     {step.icon}
-                    <h3 className="font-semibold text-black">
+                    <h3 className="font-semibold text-[#470065] text-lg">
                       {step.title}
-                    </h3>{" "}
-                    {/* black title */}
+                    </h3>
                   </div>
-                  <p className="text-gray-700 text-sm">{step.description}</p>{" "}
-                  {/* dark text for readability */}
+                  <p className="text-gray-700 text-sm leading-relaxed">
+                    {step.description}
+                  </p>
                 </div>
 
-                {/* Line connectors */}
+                {/* Horizontal Connector */}
                 <div
-                  className={`absolute top-1/2 w-6 h-px bg-[#0a6847] ${
+                  className={`absolute top-1/2 w-8 h-[2px] bg-[#8A00C3]/50 ${
                     isEven ? "right-0" : "left-0"
                   }`}
                 />

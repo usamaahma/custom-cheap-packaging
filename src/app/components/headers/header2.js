@@ -41,7 +41,12 @@ export default function Header2() {
         <div className="flex items-center gap-4 w-full sm:w-auto">
           <Link href="/">
             {" "}
-            <Image src="/Cheap Custom Packaging Logo.webp" alt="Cheap Custom Packaging Logo" width={200} height={100} />
+            <Image
+              src="/Cheap Custom Packaging Logo.webp"
+              alt="Cheap Custom Packaging Logo"
+              width={200}
+              height={100}
+            />
           </Link>
 
           {/* Search Bar */}
@@ -71,7 +76,7 @@ export default function Header2() {
         {/* Call Section */}
         <div className="text-center sm:text-right mt-3 sm:mt-0">
           <p>Call us toll free:</p>
-          <p className="text-green-600 text-lg font-semibold">1-888-997-2202</p>
+          <p className="text-[#8A00C3] text-lg font-semibold">1-888-997-2202</p>
           <p className="text-xs text-gray-500">
             Speak to our experts in 1 min | 9:30am - 6:30pm EST
           </p>
@@ -136,7 +141,7 @@ export default function Header2() {
           {/* Quote Button */}
           <a
             href="#"
-            className="bg-green-600 text-white px-5 py-2 rounded-full hover:bg-green-700 transition"
+            className="bg-[#8A00C3] text-white px-5 py-2 rounded-full hover:bg-[#470065] transition"
           >
             Request a Free Quote
           </a>
