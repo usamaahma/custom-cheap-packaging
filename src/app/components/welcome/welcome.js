@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Welcome() {
   return (
-    <section className="w-full bg-[#f9fafb] py-20 overflow-hidden">
+    <section className="w-full bg-white py-20 overflow-hidden">
       {/* Top Four Boxes */}
       <div className="flex flex-wrap justify-center gap-8 mb-16">
         {[
@@ -16,7 +16,7 @@ export default function Welcome() {
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={2}
-                stroke="white"
+                stroke="#8A00C3"
                 className="w-8 h-8"
               >
                 <path
@@ -33,10 +33,8 @@ export default function Welcome() {
             icon: (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                fill="white"
+                fill="#8A00C3"
                 viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="none"
                 className="w-8 h-8"
               >
                 <path d="M12 2a10 10 0 00-3 19.47V22h6v-.53A10 10 0 0012 2zM10 6h4v6h-4V6zm0 8h4v2h-4v-2z" />
@@ -49,10 +47,8 @@ export default function Welcome() {
             icon: (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                fill="white"
+                fill="#8A00C3"
                 viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="none"
                 className="w-8 h-8"
               >
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z" />
@@ -65,10 +61,8 @@ export default function Welcome() {
             icon: (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                fill="white"
+                fill="#8A00C3"
                 viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="none"
                 className="w-8 h-8"
               >
                 <path d="M12 2a10 10 0 0110 10c0 3.72-2.03 6.94-5.06 8.65L12 22l-4.94-1.35A9.97 9.97 0 012 12a10 10 0 0110-10z" />
@@ -78,14 +72,18 @@ export default function Welcome() {
         ].map((item, index) => (
           <div
             key={index}
-            className="bg-[#0a3b79] text-white rounded-tr-2xl rounded-tl-2xl rounded-br-2xl rounded-bl-none w-[330px] h-[250px] shadow-lg hover:shadow-xl transition-all duration-300 text-center border-4 border-white"
+            className="bg-white text-[#470065] rounded-2xl w-[330px] h-[250px] shadow-lg hover:shadow-xl border border-[#8A00C3]/30 transition-all duration-300 text-center"
           >
             <div className="flex flex-col items-center justify-center h-full px-5">
-              <div className="bg-[#ec008c] w-[75px] h-[75px] flex items-center justify-center rounded-full mb-4">
+              <div className="bg-[#8A00C3]/10 w-[75px] h-[75px] flex items-center justify-center rounded-full mb-4">
                 {item.icon}
               </div>
-              <h3 className="text-2xl font-semibold mb-2">{item.title}</h3>
-              <p className="text-sm leading-relaxed">{item.text}</p>
+              <h3 className="text-2xl font-semibold text-[#470065] mb-2">
+                {item.title}
+              </h3>
+              <p className="text-sm leading-relaxed text-gray-700">
+                {item.text}
+              </p>
             </div>
           </div>
         ))}
@@ -96,7 +94,7 @@ export default function Welcome() {
         {/* Left Image */}
         <div className="w-full lg:w-1/2 rounded-xl overflow-hidden shadow-md">
           <Image
-            src="/about-section.jpg" // replace with your actual image
+            src="/about-section.jpg"
             alt="Modern Printing Press"
             width={800}
             height={600}
@@ -105,32 +103,25 @@ export default function Welcome() {
         </div>
 
         {/* Right Content */}
-        <div className="w-full lg:w-1/2 bg-white rounded-xl p-8 shadow-md">
-          <h4 className="text-[#d2007b] text-lg font-medium mb-1">
+        <div className="w-full lg:w-1/2 bg-white rounded-xl p-8 shadow-md border border-[#8A00C3]/20">
+          <h4 className="text-[#8A00C3] text-lg font-medium mb-1">
             Welcome to Modern Printing Press
           </h4>
-          <h2 className="text-[#0a3b79] text-2xl lg:text-3xl font-bold mb-4 leading-snug">
+          <h2 className="text-[#470065] text-2xl lg:text-3xl font-bold mb-4 leading-snug">
             Solutions and Innovations in Printing Since 1966
           </h2>
           <p className="text-gray-700 text-sm leading-relaxed mb-4">
             Modern Printing Press (MPP) which was earlier Al Saheel Printing
             Press has been a family owned enterprise since 1959, and has been
             successfully acquired by Hassan Mohammad Bin Al Shaikh (Chairman)
-            and renamed as Modern Printing Press & Stationery in 1966, it is the
-            oldest standing and running printing house in Dubai under Hassan Bin
-            Al Shaikh Group of Industries (HBAS).
+            and renamed as Modern Printing Press & Stationery in 1966...
           </p>
           <p className="text-gray-700 text-sm leading-relaxed mb-6">
             MPP, as one of the oldest and most experienced print houses, has
             produced for its clients many quality jobs like Office Stationeries,
-            Point of Sale Materials (POSM) such as Brochures, Catalogues,
-            Magazines, Folders, Manuals, Binders, Press Kits, Posters, Counter
-            Displays, Dispensers, Floor Stands, Danglers, Wobblers, Shelf
-            Talkers / Stoppers, Buntings, Coffers, GWP/VAO Packings, Hi-End
-            Digital Outputs, Flyers, Calendars, Certificates, Stickers and
-            allied materials specializing in high quality and security printing.
+            Brochures, Catalogues, Magazines and more.
           </p>
-          <button className="bg-[#0a3b79] text-white text-sm font-medium px-6 py-2 rounded-full hover:bg-[#0c4a9b] transition-all">
+          <button className="bg-[#8A00C3] text-white text-sm font-medium px-6 py-2 rounded-full hover:bg-[#470065] transition-all">
             Read More →
           </button>
         </div>

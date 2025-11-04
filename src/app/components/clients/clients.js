@@ -14,17 +14,20 @@ function Clients() {
   ];
 
   return (
-    <section className="py-12 bg-gray-50">
+    <section className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4">
-        <h3 className="text-center font-bold text-2xl text-gray-800 mb-10">
-          ----- Our Clients -----
+        {/* Heading */}
+        <h3 className="text-center font-bold text-3xl text-[#470065] mb-12 relative inline-block w-full">
+          <span className="relative z-10 px-4 bg-white">Our Clients</span>
+          <div className="absolute left-1/2 -translate-x-1/2 top-1/2 w-40 h-[2px] bg-[#8A00C3] -z-0"></div>
         </h3>
 
+        {/* Logos Grid */}
         <div className="flex flex-wrap items-center justify-center gap-8">
           {clientLogos.map((logo, index) => (
             <div
               key={index}
-              className="w-28 h-20 flex items-center justify-center bg-white rounded-md shadow-sm hover:shadow-md transition-all p-3"
+              className="w-28 h-20 flex items-center justify-center bg-white rounded-xl border border-[#8A00C3]/20 shadow-sm hover:shadow-lg hover:scale-105 transition-all p-4"
             >
               <img
                 src={logo}
